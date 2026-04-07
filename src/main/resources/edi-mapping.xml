@@ -1,0 +1,33 @@
+<edi-message-mapping
+        xmlns="http://www.milyn.org/schema/edi-message-mapping-1.4.xsd">
+
+    <segments xmltag="Inventory">
+
+        <!-- Header -->
+        <segment segcode="ST" xmltag="Header">
+            <field xmltag="TransactionSet"/>
+            <field xmltag="ControlNumber"/>
+        </segment>
+
+        <!-- Line Item -->
+        <segment segcode="LIN" xmltag="Item">
+            <field xmltag="Empty"/>
+            <field xmltag="Qualifier"/>
+            <field xmltag="ProductId"/>
+        </segment>
+
+        <!-- Quantity -->
+        <segment segcode="QTY" xmltag="Quantity">
+            <field xmltag="Qualifier"/>
+            <field xmltag="Qty"/>
+        </segment>
+
+        <!-- Footer -->
+        <segment segcode="SE" xmltag="Footer">
+            <field xmltag="SegmentCount"/>
+            <field xmltag="ControlNumber"/>
+        </segment>
+
+    </segments>
+
+</edi-message-mapping>
